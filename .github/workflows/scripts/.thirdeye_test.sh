@@ -20,7 +20,7 @@
 
 # Java version
 java -version
-mvn test
+mvn -DTHIRDEYE_ENV=prod test
 failed=$?
 if [ $failed -eq 0 ]; then
   exit 0

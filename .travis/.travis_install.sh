@@ -21,4 +21,4 @@
 # Java version
 java -version
 
-mvn clean compile -B -DskipTests ${DEPLOY_BUILD_OPTS}
+mvn clean compile -B -DTHIRDEYE_ENV=prod -DskipTests ${DEPLOY_BUILD_OPTS}

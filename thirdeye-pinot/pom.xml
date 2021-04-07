@@ -250,7 +250,12 @@
       <groupId>org.glassfish.hk2</groupId>
       <artifactId>hk2-utils</artifactId>
     </dependency>
-
+<!-- Google client API -->
+    <dependency>
+      <groupId>com.google.api-client</groupId>
+      <artifactId>google-api-client</artifactId>
+      <version>1.31.1</version>
+    </dependency>
     <!-- test dependencies -->
     <dependency>
       <groupId>org.mockito</groupId>
