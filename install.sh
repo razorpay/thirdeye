@@ -48,4 +48,4 @@ then
     echo "Removing Target Directory"
     rm -rf thirdeye-dist/target
 fi
-mvn install -DskipTests -DTHIRDEYE_ENV=$1 ${PROFILES_ARG}|| exit 1
+mvn install -DskipTests -DTHIRDEYE_ENV=$1 || exit 1
