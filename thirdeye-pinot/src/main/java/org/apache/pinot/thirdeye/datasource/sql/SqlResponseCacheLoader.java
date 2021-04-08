@@ -442,6 +442,8 @@ public class SqlResponseCacheLoader extends CacheLoader<SqlQuery, ThirdEyeResult
     dbNameToURLMap.put(MYSQL, mysqlDBNameToURLMap);
     dbNameToURLMap.put(VERTICA, verticaDBNameToURLMap);
     dbNameToURLMap.put(BIGQUERY, BigQueryDBNameToURLMap);
+    dbNameToURLMap.put(POSTGRESQL, postgresqlDBNameToURLMap);
+    dbNameToURLMap.put(DRUID, druidDBNameToURLMap);
 
     Map<String, String> h2ToURLMap = new HashMap<>();
     h2ToURLMap.put(H2, h2Url);
