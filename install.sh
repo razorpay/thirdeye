@@ -41,4 +41,11 @@ echo "*******************************************************"
 echo "Building ThirdEye"
 echo "*******************************************************"
 
-mvn install -DskipTests -DTHIRDEYE_ENV=$1 || exit 1
+## Check if the dist directory exists and if so remove it before the below
+## This is to handle the permission problem. Ref: https://medium.com/@gregsimons_84/apache-pinot-thirdeye-quickstart-helper-b5d8a95a22eb
+if [[ -d "thirdeye-dist/target" ]]
+then
+    echo "Removing Target Directory"
+    rm -rf thirdeye-dist/target
+fi
+mvn install -DskipTests -DTHIRDEYE_ENV=$1 ${PROFILES_ARG}|| exit 1

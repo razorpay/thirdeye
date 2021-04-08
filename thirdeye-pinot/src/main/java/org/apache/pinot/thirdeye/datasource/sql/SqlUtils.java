@@ -121,7 +121,7 @@ public class SqlUtils {
     for (String dimension: dimensions) {
       sb.append(dimension).append(" varchar(50), ");
     }
-    sb.append(timeColumn).append(" varchar(50) ) ENGINE=InnoDB;");
+    sb.append(timeColumn).append(" varchar(50) );");
 
     String sql = sb.toString();
 

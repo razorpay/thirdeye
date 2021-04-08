@@ -12,5 +12,8 @@ test-output/
 *.iws
 *.log
 *.swp
+*.class
+thirdeye-pinot/src/main/java/org/apache/pinot/thirdeye/misc/mysql-connector-java-5.1.32.jar
+thirdeye-pinot/src/main/java/org/apache/pinot/thirdeye/misc/postgresql-42.2.19.jre6.jar
 docs/_build
 thirdeye-dashboard/config/h2db.trace.db
