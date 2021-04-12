@@ -23,7 +23,7 @@ if [ "$TRAVIS_JDK_VERSION" != 'oraclejdk8' ]; then
   exit 0
 fi
 
-mvn test -B ${DEPLOY_BUILD_OPTS}
+mvn test -B -DTHIRDEYE_ENV=prod ${DEPLOY_BUILD_OPTS}
 failed=$?
 if [ $failed -eq 0 ]; then
   exit 0

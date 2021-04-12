@@ -1,20 +1,30 @@
 
 # Please put the mock data source as the first in this configuration.
 dataSourceConfigs:
+  - className: org.apache.pinot.thirdeye.datasource.pinot.PinotThirdEyeDataSource
+    properties:
+      zookeeperUrl: '?$PINOT_ZOOKEEPER_HOST'
+      clusterName: '?$PINOT_CLUSTER_NAME'
+      controllerConnectionScheme: 'https'
+      controllerHost: '?$PINOT_CONTROLLER_HOST'
+      controllerPort: 443
+      cacheLoaderClassName: org.apache.pinot.thirdeye.datasource.pinot.PinotControllerResponseCacheLoader
+    metadataSourceConfigs:
+      - className: org.apache.pinot.thirdeye.auto.onboard.AutoOnboardPinotMetadataSource
   - className: org.apache.pinot.thirdeye.datasource.sql.SqlThirdEyeDataSource
     properties:
       MySQL:
         - db:
-            mysql: jdbc:mysql://127.0.0.1:33306/stats?allowPublicKeyRetrieval=true&
-          user: root
-          password: root
+            mysql: jdbc:mysql://?$MYSQL_HOSTNAME:?$MYSQL_PORT/?$THIRDEYE_DATABASE?allowPublicKeyRetrieval=true&
+          user: ?$MYSQL_USERNAME
+          password: ?$MYSQL_PASSWORD
           driver: com.mysql.cj.jdbc.Driver
       # PostgreSQL is for local deployment
       PostgreSQL:
         - db:
-            postgres: jdbc:postgresql://localhost:5432/thirdeye
-          user: postgres
-          password: postgres
+            postgres: jdbc:postgresql://timescaledb-de.razorpay.com:9090/realtime
+          user: thirdeye
+          password: ?$TIMESCALEDB_PASSWORD
       Druid:
         - db:
             druid: jdbc:avatica:remote:url=?$DRUID_URL

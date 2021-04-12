@@ -40,7 +40,7 @@ jobs:
       - name: Install Base Packages
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends vim wget curl git automake bison flex g++ libboost-all-dev libevent-dev libssl-dev libtool make pkg-config nodejs 
       - name: Building Thirdeye Stage
-        run: ./install.sh || exit 1
+        run: ./install.sh stage || exit 1
       - name: Stage Docker Push Dockerhub
         uses: docker/build-push-action@v1
         with:
@@ -50,7 +50,7 @@ jobs:
           password: ${{ secrets.PUBLIC_DOCKER_PASSWORD }}
           tags: stage-thirdeye-${{ github.sha }}
       - name: Building Thirdeye Prod
-        run: ./install.sh || exit 1
+        run: ./install.sh prod || exit 1
       - name: Prod Docker Push Dockerhub
         uses: docker/build-push-action@v1
         with:
