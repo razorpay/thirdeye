@@ -22,7 +22,7 @@ dataSourceConfigs:
       # PostgreSQL is for local deployment
       PostgreSQL:
         - db:
-            postgres: jdbc:postgresql://timescaledb-de.razorpay.com:9090/realtime
+            postgres: jdbc:postgresql://prod.realtime.pg.db.razorpay.vpc:5432/realtime
           user: thirdeye
           password: ?$TIMESCALEDB_PASSWORD
       Druid:
