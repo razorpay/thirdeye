@@ -15,9 +15,9 @@ dataSourceConfigs:
     properties:
       MySQL:
         - db:
-            mysql: jdbc:mysql://?$MYSQL_HOSTNAME:?$MYSQL_PORT/?$THIRDEYE_DATABASE?allowPublicKeyRetrieval=true&
-          user: ?$MYSQL_USERNAME
-          password: ?$MYSQL_PASSWORD
+            mysql: jdbc:mysql://?$TIDB_HOSTNAME:?$TIDB_PORT/?$TIDB_DATABASE?allowPublicKeyRetrieval=true&useSSL=false
+          user: ?$TIDB_USERNAME
+          password: ?$TIDB_PASSWORD
           driver: com.mysql.cj.jdbc.Driver
       # PostgreSQL is for local deployment
       PostgreSQL:
