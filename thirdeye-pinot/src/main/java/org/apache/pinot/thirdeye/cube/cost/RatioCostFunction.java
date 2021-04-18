@@ -71,8 +71,8 @@ import org.apache.pinot.thirdeye.cube.data.cube.CubeUtils;
     if (DoubleMath.fuzzyCompare(sizeFactor, minSizeFactor, epsilon) < 0) {
       return 0d;
     }
-    Preconditions.checkState(DoubleMath.fuzzyCompare(sizeFactor,0, epsilon) >= 0, "Contribution {} is smaller than 0.", sizeFactor);
-    Preconditions.checkState(DoubleMath.fuzzyCompare(sizeFactor,1, epsilon) <= 0, "Contribution {} is larger than 1", sizeFactor);
+    //Preconditions.checkState(DoubleMath.fuzzyCompare(sizeFactor,0, epsilon) >= 0, "Contribution {} is smaller than 0.", sizeFactor);
+    //Preconditions.checkState(DoubleMath.fuzzyCompare(sizeFactor,1, epsilon) <= 0, "Contribution {} is larger than 1", sizeFactor);
     // The cost function considers change difference, change changeRatio, and node size (i.e., sizeFactor)
     return fillEmptyValuesAndGetError(baselineValue, currentValue, parentChangeRatio, sizeFactor);
   }
