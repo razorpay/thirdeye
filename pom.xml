@@ -83,7 +83,7 @@
     <jsonpath.version>2.4.0</jsonpath.version>
     <!-- force bump up for LI usage -->
     <glassfish.hk2.utils.version>2.5.0-b34</glassfish.hk2.utils.version>
-    <kafka.clients.version>0.10.2.1</kafka.clients.version>
+    <kafka.clients.version>0.10.2.2</kafka.clients.version>
     <swagger.version>2.0.12-1</swagger.version>
     <swagger-annotation.version>1.6.2</swagger-annotation.version>
     <calendar-api.version>v3-rev300-1.23.0</calendar-api.version>
