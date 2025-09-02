@@ -223,7 +223,7 @@ public class RCAFrameworkRunner {
       result = framework.run(entities);
     } catch (Exception e) {
       System.out.println("*** Exception while running framework:");
-      e.printStackTrace();
+      
       return;
     }
 

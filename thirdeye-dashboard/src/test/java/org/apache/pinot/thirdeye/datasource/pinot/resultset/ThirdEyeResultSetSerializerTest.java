@@ -108,7 +108,7 @@ public class ThirdEyeResultSetSerializerTest {
     try {
       return OBJECT_MAPPER.writeValueAsString(dataFrameResultSet);
     } catch (JsonProcessingException e) {
-      e.printStackTrace();
+      
       return null;
     }
   }

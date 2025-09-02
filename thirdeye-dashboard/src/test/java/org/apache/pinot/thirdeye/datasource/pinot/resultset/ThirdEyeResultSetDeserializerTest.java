@@ -105,7 +105,7 @@ public class ThirdEyeResultSetDeserializerTest {
     try {
       return OBJECT_MAPPER.readValue(jsonString, ThirdEyeResultSet.class);
     } catch (IOException e) {
-      e.printStackTrace();
+      
       return null;
     }
   }

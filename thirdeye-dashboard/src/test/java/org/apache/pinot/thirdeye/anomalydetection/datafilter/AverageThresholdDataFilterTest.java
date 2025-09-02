@@ -63,7 +63,7 @@ public class AverageThresholdDataFilterTest {
       NavigableMap<DimensionMap, Double> overrideThresholdMap = averageThresholdDataFilter.getOverrideThreshold();
       Assert.assertEquals(overrideThresholdMap.get(dimensionMap), overrideThreshold.get(dimensionMap));
     } catch (JsonProcessingException e) {
-      e.printStackTrace();
+      
       Assert.fail();
     }
   }
@@ -215,7 +215,7 @@ public class AverageThresholdDataFilterTest {
       String writeValueAsString = OBJECT_MAPPER.writeValueAsString(overrideThreshold);
       dataFilter.put(AverageThresholdDataFilter.OVERRIDE_THRESHOLD_KEY, writeValueAsString);
     } catch (JsonProcessingException e) {
-      e.printStackTrace();
+      
       Assert.fail();
     }
 

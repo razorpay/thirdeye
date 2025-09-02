@@ -429,7 +429,7 @@ public class Summary {
       System.out.println("Restored Cube:");
       System.out.println(cube);
     } catch (IOException e) {
-      e.printStackTrace();
+      
       System.exit(1);
     }
     Summary summary = new Summary(cube, new BalancedCostFunction());
@@ -440,7 +440,7 @@ public class Summary {
       System.out.println("Object String: ");
       System.out.println(response.toString());
     } catch (JsonProcessingException e) {
-      e.printStackTrace();
+      
     }
 
     summary.testCorrectnessOfWowValues();
