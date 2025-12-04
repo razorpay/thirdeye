@@ -118,6 +118,10 @@
   },
   "resolutions": {
     "human-signals": "1.1.0",
-    "whatwg-fetch": "3.3.1"
+    "whatwg-fetch": "3.3.1",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/traverse": "^7.28.5",
+    "@babel/plugin-transform-runtime": "^7.28.5",
+    "rfc6902": "^5.1.2"
   }
 }
