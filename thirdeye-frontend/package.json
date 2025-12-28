@@ -93,7 +93,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "html2canvas": "^1.0.0-rc.5",
     "husky": "^4.3.0",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "keyevent": "^1.1.0",
     "lint-staged": "^10.5.1",
     "liquid-fire": "^0.30.0",
