@@ -45,7 +45,7 @@ public class HorizontalDimensionalAlertGrouperTest {
       alertGrouper = new HorizontalDimensionalAlertGrouper();
       alertGrouper.setParameters(props);
     } catch (Exception e) {
-      e.printStackTrace();
+      
       Assert.fail();
     }
   }

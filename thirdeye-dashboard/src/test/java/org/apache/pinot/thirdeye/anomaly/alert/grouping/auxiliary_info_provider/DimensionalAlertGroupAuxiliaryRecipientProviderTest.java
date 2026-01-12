@@ -66,7 +66,7 @@ public class DimensionalAlertGroupAuxiliaryRecipientProviderTest {
       Assert.assertEquals(auxiliaryRecipientsRecovered.get(dimensionMap2), EMAIL2);
       Assert.assertEquals(auxiliaryRecipientsRecovered.get(dimensionMap3), EMAIL_NOT_USED);
     } catch (JsonProcessingException e) {
-      e.printStackTrace();
+      
       Assert.fail();
     }
   }

@@ -84,7 +84,7 @@ public class TimeSeriesTest {
         }
       } catch (Exception e) {
         System.out.println("Request failed: " + timeSeriesRequest);
-        e.printStackTrace();
+        
         System.exit(-1);
       }
     }

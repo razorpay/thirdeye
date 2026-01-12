@@ -73,7 +73,7 @@ public class AutoOnboardService implements Runnable {
         autoOnboard.run();
       } catch (Throwable t) {
         LOG.error("Uncaught exception is detected while running AutoOnboard for {}", autoOnboard.getClass().getSimpleName());
-        t.printStackTrace();
+        
       }
     }
   }
