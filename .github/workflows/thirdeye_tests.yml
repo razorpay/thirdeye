@@ -26,34 +26,32 @@ on:
       - "docs/**"
       - "**.md"
 
-permissions:
-  contents: read
-
 jobs:
   unit-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
-      # Package Manager Guard. Runs after setup-java so the JDK download is not
-      # routed through the proxy. `mvn test` drives yarn install / yarn run test
-      # in the thirdeye-frontend module, which is what gets guarded here.
-      - name: Set up Package Manager Guard
+      - name: Setup PMG proxy
+        id: pmg-setup
         uses: safedep/pmg@v1
         with:
           server-mode: true
           api-key: ${{ secrets.PMG_PUBLIC_REPOS_TOKEN }}
           tenant-id: ${{ secrets.PMG_TENANT_ID }}
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
       - name: Unit Test
         run: .github/workflows/scripts/.thirdeye_test.sh
       - name: Upload coverage to Codecov
         run: |
           bash <(curl -s https://codecov.io/bash) -cF unittests
-      # Must stay the last step: stopping the proxy leaves HTTP_PROXY set in the
-      # job env, so any network step placed after this would point at a dead proxy.
       - name: Enforce PMG policy
         if: always()
-        run: pmg proxy stop --fail-on-violation
+        run: |
+          if [ "${{ steps.pmg-setup.outcome }}" = "success" ]; then
+            pmg proxy stop --fail-on-violation
+          else
+            pmg proxy stop || true
+          fi
